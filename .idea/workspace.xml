@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6728b1b7-082e-4c26-bff4-bc7282fd0b00" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/blockchain/blockchain.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/cmd" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/wallet_lzhx_.dat" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/wallet_lzhx_.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pow/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/pow/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/http.go" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cmd/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1764">
+              <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+              <folding>
+                <element signature="e#14#341#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="13" column="34" selection-start-line="13" selection-end-line="13" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blockchain.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blockchain/blockchain.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4302">
+              <caret line="239" column="16" selection-start-line="239" selection-start-column="16" selection-end-line="239" selection-end-column="16" />
+              <folding>
+                <element signature="e#20#442#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pos/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-110">
+              <caret line="152" column="5" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+              <folding>
+                <element signature="e#14#220#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpc/http.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1237">
+              <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+              <folding>
+                <element signature="e#13#187#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>looking for beginning of value</find>
+      <find>json</find>
+      <find>Got a new stream!</find>
+      <find>Now run</find>
+    </findStrings>
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pow/main.go" />
+        <option value="$PROJECT_DIR$/rpc/http.go" />
+        <option value="$PROJECT_DIR$/pos/main.go" />
+        <option value="$PROJECT_DIR$/cmd/main.go" />
+        <option value="$PROJECT_DIR$/blockchain/blockchain.go" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/vendor/github.com/gxed/hashland/keccakpg/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/ipfs/go-log/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/jbenet/goprocess/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-addr-util/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-conn-security-multistream/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-conn-security/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-flow-metrics/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-circuit/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-crypto/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-host/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-interface-connmgr/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-interface-pnet/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-loggables/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-metrics/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-nat/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-net/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-peer/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-peerstore/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-protocol/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-secio/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-swarm/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-transport-upgrader/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p-transport/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-libp2p/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-maddr-filter/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-msgio/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-reuseport-transport/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-reuseport/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-stream-muxer/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-tcp-transport/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/libp2p/go-ws-transport/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/multiformats/go-multiaddr-dns/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/multiformats/go-multiaddr-net/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/multiformats/go-multiaddr/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/multiformats/go-multihash/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/multiformats/go-multistream/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/go-multiplex/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/go-notifier/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/go-smux-multiplex/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/go-smux-multistream/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/go-smux-yamux/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/mafmt/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/multiaddr-filter/package.json" />
+      <path value="$PROJECT_DIR$/vendor/github.com/whyrusleeping/yamux/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="485" />
+    <option name="y" value="80" />
+    <option name="width" value="1398" />
+    <option name="height" value="1020" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course" type="462c0819:PsiDirectoryNode" />
+              <item name="pos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course" type="462c0819:PsiDirectoryNode" />
+              <item name="rpc" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../github.com/ethereum/go-ethereum" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1297" height="636" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980725" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24980725" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pow/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="174" column="28" lean-forward="true" selection-start-line="174" selection-start-column="28" selection-end-line="174" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpc/http.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1237">
+          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+          <folding>
+            <element signature="e#13#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="152" column="5" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="13" column="34" selection-start-line="13" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/blockchain.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4302">
+          <caret line="239" column="16" selection-start-line="239" selection-start-column="16" selection-end-line="239" selection-end-column="16" />
+          <folding>
+            <element signature="e#20#442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+          <folding>
+            <element signature="e#14#341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
