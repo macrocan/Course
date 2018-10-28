@@ -1,3 +1,9 @@
+2018/10/28 log
+
+1、添加transcation 和 state，支持transcation驱动下的state变化
+
+2、支持transcation的p2p传播，支持state的同步
+
 2018/10/23 log
 
 1、支持POS共识算法，节点间同步节点的抵押信息和新块，最后由pickwinner函数选出winner
