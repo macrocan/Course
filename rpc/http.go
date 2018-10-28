@@ -8,12 +8,11 @@ import (
 	"encoding/json"
 
 	"Course/blockchain"
-
+	"Course/wallet"
 
 	"github.com/gorilla/mux"
 	"github.com/davecgh/go-spew/spew"
 
-	"Course/wallet"
 	"fmt"
 )
 
@@ -39,6 +38,7 @@ type SendTxArgs struct {
 	From     string
 	To       string
 	Value    uint64
+	Nonce	 uint64
 	Data  	 string
 }
 
@@ -57,17 +57,28 @@ func handleWriteTx(w http.ResponseWriter, r *http.Request) {
 		respondWithJSON(w, r, http.StatusCreated, "Parameter verification failed")
 		return
 	}
-	balance := blockchain.BlockchainInstance.GetBalance(m.From)
+	if ret := blockchain.PutStateDB(m.From); ret < 0 {
+		respondWithJSON(w, r, http.StatusCreated, "Account is not existed")
+		fmt.Println("Account is not existed")
+		return
+	}
+	balance := blockchain.GetBalance(m.From)
 	if balance < m.Value {
 		respondWithJSON(w, r, http.StatusCreated, "Insufficient balance")
 		fmt.Println("Insufficient balance")
 		return
 	}
-	tx := blockchain.BlockchainInstance.NewTransaction(m.From, m.To, m.Value, []byte(m.Data))
+	nonce := blockchain.GetTempDBNonce(m.From)
+	if nonce >= m.Nonce {
+		respondWithJSON(w, r, http.StatusCreated, "account nonce error")
+		fmt.Println("Insufficient balance")
+		return
+	}
+
+	tx := blockchain.BlockchainInstance.NewTransaction(m.From, m.To, m.Value, m.Nonce, []byte(m.Data))
 	blockchain.BlockchainInstance.AddTxPool(tx)
-
+	blockchain.BrocastNewTx <- *tx
 	respondWithJSON(w, r, http.StatusCreated, tx)
-
 }
 
 type Message struct {
@@ -89,8 +100,6 @@ func handleWriteBlock(w http.ResponseWriter, r *http.Request) {
 
 	if len(blockchain.BlockchainInstance.TxPool.AllTx) > 0 {
 		blockchain.BlockchainInstance.PackageTx(&newBlock)
-	}else {
-		newBlock.Accounts = blockchain.BlockchainInstance.LastBlock().Accounts
 	}
 
 	if blockchain.IsBlockValid(newBlock, blockchain.BlockchainInstance.Blocks[len(blockchain.BlockchainInstance.Blocks)-1]) {
@@ -117,7 +126,7 @@ func handleBalance(w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
-	balance := blockchain.BlockchainInstance.GetBalance(rb.Address)
+	balance := blockchain.GetBalance(rb.Address)
 	respondWithJSON(w, r, http.StatusCreated, balance)
 }
 

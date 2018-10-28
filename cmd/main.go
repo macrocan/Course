@@ -1,7 +1,6 @@
 package main
 
 import (
-	"time"
 	"bufio"
 	"flag"
 	"fmt"
@@ -43,6 +42,43 @@ func main() {
 }
 
 func runblockchain(listenF *int, target *string, seed *int64, secio *bool, suffix *string, initAccounts *string){
+	var t int64= 1540610566		// 2018-10-27
+	genesisBlock := blockchain.Block{}
+	firstValitor := "1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY"
+	genesisAccounts := make(map[string]blockchain.Account)
+	genesisAccounts[firstValitor] = blockchain.Account{
+			Addr: 		"1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY",
+			Nonce:		0,
+			Balance: 	10000,
+	}
+	genesisAccounts["1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq"] = blockchain.Account{
+		Addr: 		"1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq",
+		Nonce:		0,
+		Balance: 	10000,
+	}
+
+
+	if *initAccounts != ""{
+		if wallet.ValidateAddress(*initAccounts) == false {
+			fmt.Println("Invalid address")
+			return
+		}
+	}
+	genesisBlock = blockchain.Block{0, t, 0, firstValitor,blockchain.CalculateBlockHash(genesisBlock), "", 0,nil, genesisAccounts}
+
+	var blocks []blockchain.Block
+	blocks = append(blocks, genesisBlock)
+	blockchain.BlockchainInstance.Blocks =  blocks
+	blockchain.State.Accounts = genesisAccounts
+
+	bytes, err := json.MarshalIndent(blockchain.BlockchainInstance.Blocks, "", "  ")
+	if err != nil {
+		log.Fatal(err)
+	}
+	// Green console color: 	\x1b[32m
+	// Reset console color: 	\x1b[0m
+	fmt.Printf("\x1b[32m%s\x1b[0m> ", string(bytes))
+
 	// LibP2P code uses golog to log messages. They log with different
 	// string IDs (i.e. "swarm"). We can control the verbosity level for
 	// all loggers with:
@@ -67,6 +103,8 @@ func runblockchain(listenF *int, target *string, seed *int64, secio *bool, suffi
 		}
 	}()
 
+	go blockchain.AnnounceWinner()
+
 	go rpc.RunHttpServer(*listenF+1)
 
 	// Make a host that listens on the given multiaddress
@@ -76,31 +114,6 @@ func runblockchain(listenF *int, target *string, seed *int64, secio *bool, suffi
 	}
 
 	if *target == "" {
-		t := time.Now().Unix()
-		genesisBlock := blockchain.Block{}
-		defaultAccounts := make(map[string]uint64)
-
-		if *initAccounts != ""{
-			if wallet.ValidateAddress(*initAccounts) == false {
-				fmt.Println("Invalid address")
-				return
-			}
-			defaultAccounts[*initAccounts] = 10000
-		}
-		genesisBlock = blockchain.Block{0, t, 0, *initAccounts,blockchain.CalculateBlockHash(genesisBlock), "", 100,nil, defaultAccounts}
-
-		var blocks []blockchain.Block
-		blocks = append(blocks, genesisBlock)
-		blockchain.BlockchainInstance.Blocks =  blocks
-
-		bytes, err := json.MarshalIndent(blockchain.BlockchainInstance.Blocks, "", "  ")
-		if err != nil {
-			log.Fatal(err)
-		}
-		// Green console color: 	\x1b[32m
-		// Reset console color: 	\x1b[0m
-		fmt.Printf("\x1b[32m%s\x1b[0m> ", string(bytes))
-
 		log.Println("listening for connections")
 		// Set a stream handler on host A. /p2p/1.0.0 is
 		// a user-defined protocol name.

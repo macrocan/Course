@@ -8,7 +8,11 @@
 ### 使用可执行文件生成新账户
 ./cmd -c account lzhx_ createwallet     (lzhx_ 表示钱包后缀)
 
-Your new address: 13qAPhDtk82VdLMcaUoh7jwNi5HpFX6De
+Your new address: 1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY
+
+./cmd -c account zhong_ createwallet     (lzhx_ 表示钱包后缀)
+
+Your new address: 1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq
 
 ### 使用可执行文件查看钱包地址列表
 ./cmd -c account lzhx_ listaddresses  
@@ -26,7 +30,7 @@ Your new address: 13qAPhDtk82VdLMcaUoh7jwNi5HpFX6De
 ### 启动链并连
 
 接对端节点
-./cmd -c chain -s lzhx_ -l 8080 -a 13qAPhDtk82VdLMcaUoh7jwNi5HpFX6De
+./cmd -c chain -s lzhx_ -l 8080 -a 1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY
 
 -s 表示 钱包后缀
 
@@ -41,7 +45,7 @@ local http server listening on 127.0.0.1:8081
 
 在另一个terminal中启动对端节点（加入-s参数表示该节点的钱包后缀名）
 
-./cmd -s lzhx_ -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmdhJPDZaLPCFjZMsuLfVtzZMNaZMPp6wT85gYdRnVcppj
+./cmd -s lzhx_ -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmdhJPDZaLPCFjZMsuLfVtzZMNaZMPp6wT85gYdRnVcppj -a 1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq -s zhong_
 
 两节点正常连接后可在terminal中输入任意数字，该操作将产生新的块并同步块信息到对端节点
 
@@ -54,35 +58,41 @@ path: http://127.0.0.1: &lt; port &gt;
 
 return:
 ```json
-   {
-     "Blocks": [
-       {
-         "index": 0,
-         "timestamp": "2018-09-20 17:51:25.453600292 +0800 CST m=+0.003102402",
-         "result": 0,
-         "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
-         "prevhash": "",
-         "proof": 100,
-         "transactions": {},
-         "accounts": {
-           "13qAPhDtk82VdLMcaUoh7jwNi5HpFX6De": 10000
+   [
+     {
+       "index": 0,
+       "timestamp": 1540610566,
+       "result": 0,
+       "validator": "1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY",
+       "hash": "2ac9a6746aca543af8dff39894cfe8173afba21eb01c6fae33d52947222855ef",
+       "prevhash": "",
+       "proof": 0,
+       "transactions": null,
+       "CoinBase": {
+         "1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq": {
+           "Addr": "1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq",
+           "Nonce": 0,
+           "Balance": 10000
+         },
+         "1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY": {
+           "Addr": "1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY",
+           "Nonce": 0,
+           "Balance": 10000
          }
-       },
-       {
-         "index": 1,
-         "timestamp": "2018-09-20 17:51:27.893924841 +0800 CST m=+2.443408915",
-         "result": 1,
-         "hash": "1a32963946ab93f40d9cc9706503978c2854c86906fe691c4ebac989307a0671",
-         "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
-         "proof": 0,
-         "transactions": null,
-         "accounts": {}
        }
-     ],
-     "TxPool": {
-       "AllTx": []
+     },
+     {
+       "index": 1,
+       "timestamp": 1540737336,
+       "result": 2,
+       "validator": "1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq",
+       "hash": "25db28fe02a65b704d7770eebe6b9b8f6ac162b0263620384a3d5b75974f0cb1",
+       "prevhash": "2ac9a6746aca543af8dff39894cfe8173afba21eb01c6fae33d52947222855ef",
+       "proof": 0,
+       "transactions": null,
+       "CoinBase": null
      }
-   }
+   ]
 ```
 
 
@@ -94,20 +104,22 @@ path:   http://127.0.0.1: &lt; port &gt; /txpool
 param:
 
 ```json
-   {
-    "From": "13qAPhDtk82VdLMcaUoh7jwNi5HpFX6De",
-    "To": "17eeNAJcUWECkHLDgGcXwZPKrYteNLq2hm",
-    "Value": 100,
-    "Data": "message"
-}
+    {
+        "From": "1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY",
+        "To": "1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq",
+        "Value": 100,
+        "nonce": 3,
+        "Data": "message"
+    }
 ```
 
 return:
 ```json
     {
-      "amount": 1,
-      "recipient": "17eeNAJcUWECkHLDgGcXwZPKrYteNLq2hm",
-      "sender": "13qAPhDtk82VdLMcaUoh7jwNi5HpFX6De",
+      "sender": "1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY",
+      "recipient": "1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq",
+      "amount": 100,
+      "account_nonce": 3,
       "data": "bWVzc2FnZQ=="
     }
 ```
@@ -158,7 +170,7 @@ path:   http://127.0.0.1: &lt; port &gt; /getbalance
 param:
 
 ```json
-    {"Address": "17eeNAJcUWECkHLDgGcXwZPKrYteNLq2hm"}
+    {"Address": "1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq"}
 ```
 
 return:
