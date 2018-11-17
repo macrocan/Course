@@ -1,3 +1,15 @@
+2018/11/17 log
+1、交易添加ID
+
+2、增加定时自动出块
+
+3、修改交易池，以适应交易检查和进出交易池的要求
+
+4、创世区块指定两个账号的余额，一开始转账的时候必须用这两个账号(1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY, 1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq)
+
+5、启动时需要制定账号，并且使用独立的钱包，因为需要钱包检查密钥
+
+
 2018/10/28 log
 
 1、添加transcation 和 state，支持transcation驱动下的state变化
