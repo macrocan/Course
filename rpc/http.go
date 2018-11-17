@@ -68,12 +68,12 @@ func handleWriteTx(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Insufficient balance")
 		return
 	}
-	nonce := blockchain.GetTempDBNonce(m.From)
-	if nonce >= m.Nonce {
-		respondWithJSON(w, r, http.StatusCreated, "account nonce error")
-		fmt.Println("Insufficient balance")
-		return
-	}
+	//nonce := blockchain.GetTempDBNonce(m.From)
+	//if nonce >= m.Nonce {
+	//	respondWithJSON(w, r, http.StatusCreated, "account nonce error")
+	//	fmt.Println("INvalid Nonce")
+	//	return
+	//}
 
 	tx := blockchain.BlockchainInstance.NewTransaction(m.From, m.To, m.Value, m.Nonce, []byte(m.Data))
 	blockchain.BlockchainInstance.AddTxPool(tx)

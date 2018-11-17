@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6728b1b7-082e-4c26-bff4-bc7282fd0b00" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/blockchain/transcation_list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/blockchain.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/cmd" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/http.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmd/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="263">
-              <caret line="71" column="47" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="47" />
+              <caret line="53" column="55" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../exercises/Bench/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -38,10 +44,12 @@
       <file leaf-file-name="blockchain.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blockchain/blockchain.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="-20">
+              <caret line="133" column="32" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
               <folding>
                 <element signature="e#526#868#0" />
+                <element signature="e#883#942#0" />
+                <element signature="e#957#997#0" />
                 <element signature="e#1024#1091#0" />
                 <element signature="e#1254#1451#0" />
                 <element signature="e#1465#1500#0" />
@@ -53,29 +61,27 @@
                 <element signature="e#2225#2329#0" />
                 <element signature="e#2284#2326#0" />
                 <element signature="e#2335#2351#0" />
-                <element signature="e#2417#2542#0" />
-                <element signature="e#2460#2511#0" />
-                <element signature="e#2517#2519#0" />
                 <element signature="e#2583#2620#0" />
-                <element signature="e#2661#2743#0" />
                 <element signature="e#2706#2731#0" />
                 <element signature="e#2788#2872#0" />
                 <element signature="e#2837#2860#0" />
                 <element signature="e#2911#2991#0" />
                 <element signature="e#2956#2979#0" />
+                <element signature="e#3043#3259#0" />
+                <element signature="e#3101#3130#0" />
+                <element signature="e#3136#3215#0" />
+                <element signature="e#3153#3212#0" />
                 <element signature="e#3311#3542#0" />
                 <element signature="e#3369#3507#0" />
                 <element signature="e#3397#3479#0" />
                 <element signature="e#3485#3503#0" />
                 <element signature="e#3513#3529#0" />
                 <element signature="e#3599#4115#0" />
-                <element signature="e#3650#3851#0" />
-                <element signature="e#3681#3699#0" />
-                <element signature="e#3735#3753#0" />
-                <element signature="e#3857#3873#0" />
-                <element signature="e#3936#3968#0" />
-                <element signature="e#3974#4061#0" />
-                <element signature="e#3991#4058#0" />
+                <element signature="e#4163#4471#0" />
+                <element signature="e#4205#4388#0" />
+                <element signature="e#4252#4348#0" />
+                <element signature="e#4586#4624#0" />
+                <element signature="e#4943#5005#0" />
                 <element signature="e#4520#4566#0" />
                 <element signature="e#5183#5242#0" />
                 <element signature="e#5034#5051#0" />
@@ -117,21 +123,6 @@
                 <element signature="e#9472#9616#0" />
                 <element signature="e#9501#9515#0" />
                 <element signature="e#9631#9705#0" />
-                <element signature="e#9756#11540#0" />
-                <element signature="e#9764#11538#0" />
-                <element signature="e#9816#9839#0" />
-                <element signature="e#9856#9871#0" />
-                <element signature="e#9917#10146#0" />
-                <element signature="e#10054#10079#0" />
-                <element signature="e#10241#10539#0" />
-                <element signature="e#10385#10410#0" />
-                <element signature="e#10643#10905#0" />
-                <element signature="e#10796#10821#0" />
-                <element signature="e#10972#11535#0" />
-                <element signature="e#11127#11152#0" />
-                <element signature="e#11220#11513#0" />
-                <element signature="e#11352#11380#0" />
-                <element signature="e#12180#12213#0" />
                 <element signature="e#12371#14601#0" />
                 <element signature="e#11653#11945#0" />
                 <element signature="e#11661#11942#0" />
@@ -160,6 +151,7 @@
                 <element signature="e#14065#14164#0" />
                 <element signature="e#14893#15067#0" />
                 <element signature="e#14273#14447#0" />
+                <element signature="e#14570#14828#0" />
               </folding>
             </state>
           </provider>
@@ -168,8 +160,8 @@
       <file leaf-file-name="transcation_list.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blockchain/transcation_list.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="160">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding>
                 <element signature="e#38#63#0" expanded="true" />
               </folding>
@@ -180,10 +172,25 @@
       <file leaf-file-name="http.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpc/http.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="193">
+              <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
               <folding>
-                <element signature="n#!!block;n#handleWriteTx#0" />
+                <element signature="n#!!block;n#makeMuxRouter#0" />
+                <element signature="n#!!block;n#handleGetBlockchain#0" />
+                <element signature="e#887#961#0" />
+                <element signature="e#1015#1107#0" />
+                <element signature="e#2385#2404#0" />
+                <element signature="n#!!block;n#handleWriteBlock#0" />
+                <element signature="e#2564#2632#0" />
+                <element signature="e#3030#3222#0" />
+                <element signature="e#3297#3323#0" />
+                <element signature="n#!!block;n#handleBalance#0" />
+                <element signature="e#3488#3556#0" />
+                <element signature="n#!!block;n#respondWithJSON#0" />
+                <element signature="e#3846#3960#0" />
+                <element signature="n#!!block;n#RunHttpServer#0" />
+                <element signature="e#4189#4352#0" />
+                <element signature="e#4396#4413#0" />
               </folding>
             </state>
           </provider>
@@ -260,6 +267,7 @@
         <option value="$PROJECT_DIR$/blockchain/transcation_list.go" />
         <option value="$PROJECT_DIR$/rpc/http.go" />
         <option value="$PROJECT_DIR$/blockchain/blockchain.go" />
+        <option value="$PROJECT_DIR$/../exercises/Bench/main.go" />
       </list>
     </option>
   </component>
@@ -438,7 +446,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -462,6 +470,8 @@
           <caret line="221" column="47" lean-forward="true" selection-start-line="221" selection-start-column="47" selection-end-line="221" selection-end-column="47" />
           <folding>
             <element signature="e#526#868#0" />
+            <element signature="e#883#942#0" />
+            <element signature="e#957#997#0" />
             <element signature="e#1024#1091#0" />
             <element signature="e#1254#1451#0" />
             <element signature="e#1465#1500#0" />
@@ -473,29 +483,27 @@
             <element signature="e#2225#2329#0" />
             <element signature="e#2284#2326#0" />
             <element signature="e#2335#2351#0" />
-            <element signature="e#2417#2542#0" />
-            <element signature="e#2460#2511#0" />
-            <element signature="e#2517#2519#0" />
             <element signature="e#2583#2620#0" />
-            <element signature="e#2661#2743#0" />
             <element signature="e#2706#2731#0" />
             <element signature="e#2788#2872#0" />
             <element signature="e#2837#2860#0" />
             <element signature="e#2911#2991#0" />
             <element signature="e#2956#2979#0" />
+            <element signature="e#3043#3259#0" />
+            <element signature="e#3101#3130#0" />
+            <element signature="e#3136#3215#0" />
+            <element signature="e#3153#3212#0" />
             <element signature="e#3311#3542#0" />
             <element signature="e#3369#3507#0" />
             <element signature="e#3397#3479#0" />
             <element signature="e#3485#3503#0" />
             <element signature="e#3513#3529#0" />
             <element signature="e#3599#4115#0" />
-            <element signature="e#3650#3851#0" />
-            <element signature="e#3681#3699#0" />
-            <element signature="e#3735#3753#0" />
-            <element signature="e#3857#3873#0" />
-            <element signature="e#3936#3968#0" />
-            <element signature="e#3974#4061#0" />
-            <element signature="e#3991#4058#0" />
+            <element signature="e#4163#4471#0" />
+            <element signature="e#4205#4388#0" />
+            <element signature="e#4252#4348#0" />
+            <element signature="e#4586#4624#0" />
+            <element signature="e#4943#5005#0" />
             <element signature="e#4520#4566#0" />
             <element signature="e#5183#5242#0" />
             <element signature="e#5034#5051#0" />
@@ -537,21 +545,6 @@
             <element signature="e#9472#9616#0" />
             <element signature="e#9501#9515#0" />
             <element signature="e#9631#9705#0" />
-            <element signature="e#9756#11540#0" />
-            <element signature="e#9764#11538#0" />
-            <element signature="e#9816#9839#0" />
-            <element signature="e#9856#9871#0" />
-            <element signature="e#9917#10146#0" />
-            <element signature="e#10054#10079#0" />
-            <element signature="e#10241#10539#0" />
-            <element signature="e#10385#10410#0" />
-            <element signature="e#10643#10905#0" />
-            <element signature="e#10796#10821#0" />
-            <element signature="e#10972#11535#0" />
-            <element signature="e#11127#11152#0" />
-            <element signature="e#11220#11513#0" />
-            <element signature="e#11352#11380#0" />
-            <element signature="e#12180#12213#0" />
             <element signature="e#12371#14601#0" />
             <element signature="e#11653#11945#0" />
             <element signature="e#11661#11942#0" />
@@ -580,6 +573,7 @@
             <element signature="e#14065#14164#0" />
             <element signature="e#14893#15067#0" />
             <element signature="e#14273#14447#0" />
+            <element signature="e#14570#14828#0" />
           </folding>
         </state>
       </provider>
@@ -610,7 +604,22 @@
         <state relative-caret-position="180">
           <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding>
-            <element signature="n#!!block;n#handleWriteTx#0" />
+            <element signature="n#!!block;n#makeMuxRouter#0" />
+            <element signature="n#!!block;n#handleGetBlockchain#0" />
+            <element signature="e#887#961#0" />
+            <element signature="e#1015#1107#0" />
+            <element signature="e#2385#2404#0" />
+            <element signature="n#!!block;n#handleWriteBlock#0" />
+            <element signature="e#2564#2632#0" />
+            <element signature="e#3030#3222#0" />
+            <element signature="e#3297#3323#0" />
+            <element signature="n#!!block;n#handleBalance#0" />
+            <element signature="e#3488#3556#0" />
+            <element signature="n#!!block;n#respondWithJSON#0" />
+            <element signature="e#3846#3960#0" />
+            <element signature="n#!!block;n#RunHttpServer#0" />
+            <element signature="e#4189#4352#0" />
+            <element signature="e#4396#4413#0" />
           </folding>
         </state>
       </provider>
@@ -772,16 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpc/http.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="n#!!block;n#handleWriteTx#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -791,20 +790,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/transcation_list.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        <state relative-caret-position="160">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding>
             <element signature="e#38#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rpc/http.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!block;n#makeMuxRouter#0" />
+            <element signature="n#!!block;n#handleGetBlockchain#0" />
+            <element signature="e#887#961#0" />
+            <element signature="e#1015#1107#0" />
+            <element signature="e#2385#2404#0" />
+            <element signature="n#!!block;n#handleWriteBlock#0" />
+            <element signature="e#2564#2632#0" />
+            <element signature="e#3030#3222#0" />
+            <element signature="e#3297#3323#0" />
+            <element signature="n#!!block;n#handleBalance#0" />
+            <element signature="e#3488#3556#0" />
+            <element signature="n#!!block;n#respondWithJSON#0" />
+            <element signature="e#3846#3960#0" />
+            <element signature="n#!!block;n#RunHttpServer#0" />
+            <element signature="e#4189#4352#0" />
+            <element signature="e#4396#4413#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/blockchain.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="-20">
+          <caret line="133" column="32" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
           <folding>
             <element signature="e#526#868#0" />
+            <element signature="e#883#942#0" />
+            <element signature="e#957#997#0" />
             <element signature="e#1024#1091#0" />
             <element signature="e#1254#1451#0" />
             <element signature="e#1465#1500#0" />
@@ -816,29 +842,27 @@
             <element signature="e#2225#2329#0" />
             <element signature="e#2284#2326#0" />
             <element signature="e#2335#2351#0" />
-            <element signature="e#2417#2542#0" />
-            <element signature="e#2460#2511#0" />
-            <element signature="e#2517#2519#0" />
             <element signature="e#2583#2620#0" />
-            <element signature="e#2661#2743#0" />
             <element signature="e#2706#2731#0" />
             <element signature="e#2788#2872#0" />
             <element signature="e#2837#2860#0" />
             <element signature="e#2911#2991#0" />
             <element signature="e#2956#2979#0" />
+            <element signature="e#3043#3259#0" />
+            <element signature="e#3101#3130#0" />
+            <element signature="e#3136#3215#0" />
+            <element signature="e#3153#3212#0" />
             <element signature="e#3311#3542#0" />
             <element signature="e#3369#3507#0" />
             <element signature="e#3397#3479#0" />
             <element signature="e#3485#3503#0" />
             <element signature="e#3513#3529#0" />
             <element signature="e#3599#4115#0" />
-            <element signature="e#3650#3851#0" />
-            <element signature="e#3681#3699#0" />
-            <element signature="e#3735#3753#0" />
-            <element signature="e#3857#3873#0" />
-            <element signature="e#3936#3968#0" />
-            <element signature="e#3974#4061#0" />
-            <element signature="e#3991#4058#0" />
+            <element signature="e#4163#4471#0" />
+            <element signature="e#4205#4388#0" />
+            <element signature="e#4252#4348#0" />
+            <element signature="e#4586#4624#0" />
+            <element signature="e#4943#5005#0" />
             <element signature="e#4520#4566#0" />
             <element signature="e#5183#5242#0" />
             <element signature="e#5034#5051#0" />
@@ -880,21 +904,6 @@
             <element signature="e#9472#9616#0" />
             <element signature="e#9501#9515#0" />
             <element signature="e#9631#9705#0" />
-            <element signature="e#9756#11540#0" />
-            <element signature="e#9764#11538#0" />
-            <element signature="e#9816#9839#0" />
-            <element signature="e#9856#9871#0" />
-            <element signature="e#9917#10146#0" />
-            <element signature="e#10054#10079#0" />
-            <element signature="e#10241#10539#0" />
-            <element signature="e#10385#10410#0" />
-            <element signature="e#10643#10905#0" />
-            <element signature="e#10796#10821#0" />
-            <element signature="e#10972#11535#0" />
-            <element signature="e#11127#11152#0" />
-            <element signature="e#11220#11513#0" />
-            <element signature="e#11352#11380#0" />
-            <element signature="e#12180#12213#0" />
             <element signature="e#12371#14601#0" />
             <element signature="e#11653#11945#0" />
             <element signature="e#11661#11942#0" />
@@ -923,6 +932,7 @@
             <element signature="e#14065#14164#0" />
             <element signature="e#14893#15067#0" />
             <element signature="e#14273#14447#0" />
+            <element signature="e#14570#14828#0" />
           </folding>
         </state>
       </provider>
@@ -930,7 +940,14 @@
     <entry file="file://$PROJECT_DIR$/cmd/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
-          <caret line="71" column="47" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="47" />
+          <caret line="53" column="55" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../exercises/Bench/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
         </state>
       </provider>
     </entry>

@@ -122,12 +122,16 @@ func PutStateDB(address string) int {
 }
 
 func (t *Blockchain)AddTxPool(tx *Transaction) int {
-	if ret := t.processTempTx(tx); ret == 0 {
-		//t.TxPool.AllTx = append(t.TxPool.AllTx, *tx)
-		t.TxPool.PengdingTx.Push(tx)
-	} else {
-		log.Println("invalid trx!")
-	}
+	//if ret := t.processTempTx(tx); ret == 0 {
+	//	//t.TxPool.AllTx = append(t.TxPool.AllTx, *tx)
+	//	if !t.TxPool.PengdingTx.Same(tx.ID) {
+	//		t.TxPool.PengdingTx.Push(tx)
+	//	}
+	//} else {
+	//	log.Println("invalid trx!")
+	//}
+
+	t.TxPool.PengdingTx.Push(tx)
 
 	return 0
 }
@@ -199,10 +203,10 @@ func (t *Blockchain)processTempTx(tx *Transaction) int {
 			return -1
 		}
 
-		if acc.Nonce >= tx.AccountNonce {
-			return -2
-		}
-		acc.Nonce = tx.AccountNonce
+		//if acc.Nonce >= tx.AccountNonce {
+		//	return -2
+		//}
+		//acc.Nonce = tx.AccountNonce
 		acc.Balance -= tx.Amount
 		tempState.Accounts[tx.Sender] = acc
 	} else {
