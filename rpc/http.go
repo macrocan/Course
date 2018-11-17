@@ -98,9 +98,9 @@ func handleWriteBlock(w http.ResponseWriter, r *http.Request) {
 	newBlock := blockchain.GenerateBlock(blockchain.BlockchainInstance.Blocks[len(blockchain.BlockchainInstance.Blocks)-1], m.Msg, "")
 
 
-	if len(blockchain.BlockchainInstance.TxPool.AllTx) > 0 {
+	//if len(blockchain.BlockchainInstance.TxPool.AllTx) > 0 {
 		blockchain.BlockchainInstance.PackageTx(&newBlock)
-	}
+	//}
 
 	if blockchain.IsBlockValid(newBlock, blockchain.BlockchainInstance.Blocks[len(blockchain.BlockchainInstance.Blocks)-1]) {
 		blockchain.Lock()

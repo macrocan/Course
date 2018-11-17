@@ -38,7 +38,7 @@ type Block struct {
 	PrevHash  string `json:"prevhash"`
 	Proof        uint64           `json:"proof"`
 	Transactions []Transaction `json:"transactions"`
-	CoinBase 	map[string]Account
+	CoinBase 	map[string]Account	`json:"coin_base"`
 }
 
 type Account struct {
@@ -62,6 +62,7 @@ var State StateDB = StateDB{Accounts:   make(map[string]Account, 1)}
 var tempState StateDB = StateDB{Accounts:   make(map[string]Account, 1)}
 
 type Transaction struct {
+	ID 		  string	`json:"id"`
 	Sender    string 	`json:"sender"`
 	Recipient string 	`json:"recipient"`
 	Amount    uint64    `json:"amount"`
@@ -70,23 +71,25 @@ type Transaction struct {
 }
 
 type TxPool struct {
-	AllTx     []Transaction
+	PengdingTx *TxsList //Unpackaged list of legitimate transactions
 }
+
+
 
 func NewTxPool() *TxPool {
 	return &TxPool{
-		AllTx:   make([]Transaction, 0),
+		PengdingTx:   NewTxsList(),
 	}
 }
 
 
-func (p *TxPool)Clear() bool {
-	if len(p.AllTx) == 0 {
-		return true
-	}
-	p.AllTx = make([]Transaction, 0)
-	return true
-}
+//func (p *TxPool)Clear() bool {
+//	if len(p.PengdingTx) == 0 {
+//		return true
+//	}
+//	p.AllTx = make([]Transaction, 0)
+//	return true
+//}
 
 // Blockchain is a series of validated Blocks
 type Blockchain struct {
@@ -101,6 +104,7 @@ func (t *Blockchain) NewTransaction(sender string, recipient string, amount, non
 	transaction.Amount = amount
 	transaction.AccountNonce = nonce
 	transaction.Data = data
+	transaction.ID = calculateTransactionsHash(*transaction)
 
 	return transaction
 }
@@ -119,10 +123,13 @@ func PutStateDB(address string) int {
 
 func (t *Blockchain)AddTxPool(tx *Transaction) int {
 	if ret := t.processTempTx(tx); ret == 0 {
-		t.TxPool.AllTx = append(t.TxPool.AllTx, *tx)
+		//t.TxPool.AllTx = append(t.TxPool.AllTx, *tx)
+		t.TxPool.PengdingTx.Push(tx)
+	} else {
+		log.Println("invalid trx!")
 	}
 
-	return len(t.TxPool.AllTx)
+	return 0
 }
 
 func (t *Blockchain) LastBlock() Block {
@@ -228,14 +235,36 @@ func (t *Blockchain)ProcessTx(newBlock Block) {
 		}
 
 		AddBalance(v.Recipient, v.Amount)
+
+		//for i, trx := range t.TxPool.AllTx {
+		//	if trx.ID == v.ID {
+		//		if i == len(t.TxPool.AllTx) {
+		//			t.TxPool.AllTx =t.TxPool.AllTx[:i-1]
+		//		} else {
+		//			t.TxPool.AllTx = append(t.TxPool.AllTx[:i-1], t.TxPool.AllTx[i+1:]...)
+		//		}
+		//	}
+		//}
+		t.TxPool.PengdingTx.Delete(v.ID)
+
+		log.Println("delete trx ", v.ID)
+
+		tempState.Accounts[v.Sender] = State.Accounts[v.Sender]
 	}
 
-	tempState = StateDB{Accounts:   make(map[string]Account, 0)}
-	t.TxPool.Clear()
+	//tempState = StateDB{Accounts:   make(map[string]Account, 0)}
+	//t.TxPool.Clear()
 }
 
 func (t *Blockchain)PackageTx(newBlock *Block) {
-	(*newBlock).Transactions = t.TxPool.AllTx
+	var txs []Transaction
+	for _, v := range t.TxPool.PengdingTx.Txs {
+		txs = append(txs, *v)
+	}
+
+	log.Printf("tx pool has %d trx\n", len(txs))
+
+	(*newBlock).Transactions = txs
 }
 
 var BlockchainInstance Blockchain = Blockchain{
@@ -342,6 +371,7 @@ func WaitingBlock() {
 func PickWinner() {
 	for {
 		if time.Now().Unix() % 10 == 0 {
+			time.Sleep(time.Second)
 			break
 		}
 	}
@@ -390,7 +420,9 @@ func PickWinner() {
 			if block.Validator == lotteryWinner {
 				if block.Index > BlockchainInstance.LastBlock().Index {		// new block must higer than current last block
 					mutex.Lock()
-					BlockchainInstance.ProcessTx(block)
+					if len(block.Transactions) > 0 {
+						BlockchainInstance.ProcessTx(block)
+					}
 					BlockchainInstance.Blocks = append(BlockchainInstance.Blocks, block)
 					mutex.Unlock()
 
@@ -456,6 +488,7 @@ func ReadData(rw *bufio.ReadWriter) {
 				log.Fatal(err)
 			}
 
+			log.Println(txStr)
 			PutStateDB(tx.Sender)
 			BlockchainInstance.AddTxPool(&tx)
 		}
@@ -581,25 +614,46 @@ func WriteData(rw *bufio.ReadWriter) {
 	mutex.Unlock()
 
 	fmt.Println(validators)
+
+	var ticker *time.Ticker
+	for {
+		if time.Now().Unix() % 10 == 0 {
+			//time.Sleep(time.Second)
+			ticker = time.NewTicker(10 * time.Second)
+			break
+		}
+	}
+
+
+
 	go func() {
 		for {
-			fmt.Print("\nEnter a new Result:")
-			sendData, err := stdReader.ReadString('\n')
-			if err != nil {
-				log.Fatal(err)
+			select {
+			case <-ticker.C:
+				fmt.Printf("ticked at %v\n", time.Now())
 			}
 
-			sendData = strings.Replace(sendData, "\n", "", -1)
-			_result, err := strconv.Atoi(sendData)
-			if err != nil {
-				log.Fatal(err)
-			}
+			newBlock := GenerateBlock(BlockchainInstance.LastBlock(), 1, NodeAccount)
 
-			newBlock := GenerateBlock(BlockchainInstance.LastBlock(), _result, NodeAccount)
+			//fmt.Print("\nEnter a new Result:")
+			//sendData, err := stdReader.ReadString('\n')
+			//if err != nil {
+			//	log.Fatal(err)
+			//}
+			//
+			//sendData = strings.Replace(sendData, "\n", "", -1)
+			//_result, err := strconv.Atoi(sendData)
+			//if err != nil {
+			//	log.Fatal(err)
+			//}
+			//
+			//newBlock := GenerateBlock(BlockchainInstance.LastBlock(), _result, NodeAccount)
 
-			if len(BlockchainInstance.TxPool.AllTx) > 0 {
+
+
+			//if len(BlockchainInstance.TxPool.AllTx) > 0 {
 				BlockchainInstance.PackageTx(&newBlock)
-			}
+			//}
 
 			if IsBlockValid(newBlock, BlockchainInstance.LastBlock()) {
 				candidateBlocks <- newBlock
@@ -619,6 +673,8 @@ func WriteData(rw *bufio.ReadWriter) {
 
 
 }
+
+
 
 // make sure block is valid by checking index, and comparing the hash of the previous block
 func IsBlockValid(newBlock, oldBlock Block) bool {
@@ -646,6 +702,12 @@ func calculateHash(s string) string {
 	return hex.EncodeToString(hashed)
 }
 
+//calculateBlockHash returns the hash of Transaction information
+func calculateTransactionsHash(trx Transaction) string {
+	record := trx.Sender + trx.Recipient + strconv.FormatUint(trx.Amount, 10) + strconv.FormatUint(trx.AccountNonce, 10)
+	return calculateHash(record)
+}
+
 //calculateBlockHash returns the hash of all block information
 func CalculateBlockHash(block Block) string {
 	record := strconv.Itoa(block.Index) + strconv.FormatInt(block.Timestamp,10) + strconv.Itoa(block.Result) + block.Validator + block.PrevHash
@@ -661,6 +723,7 @@ func GenerateBlock(oldBlock Block, result int, validator string) Block {
 	newBlock.Result = result
 	newBlock.Validator = validator
 	newBlock.PrevHash = oldBlock.Hash
+	newBlock.CoinBase = nil
 	newBlock.Hash = CalculateBlockHash(newBlock)
 
 	return newBlock
