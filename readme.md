@@ -35,46 +35,39 @@
 
 
 ### 使用可执行文件生成新账户
-./cmd -c account lzhx_ createwallet     (lzhx_ 表示钱包后缀)
-
+```shell script
+$ ./cmd -c account lzhx_ createwallet
 Your new address: 1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY
 
-./cmd -c account zhong_ createwallet     (lzhx_ 表示钱包后缀)
-
+$ ./cmd -c account zhong_ createwallet
 Your new address: 1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq
+```
+创建2个钱包，lzhx_和zhong_是钱包后缀
 
 ### 使用可执行文件查看钱包地址列表
-./cmd -c account lzhx_ listaddresses  
-
+```shell script
+$ ./cmd -c account lzhx_ listaddresses  
 13qAPhDtk82VdLMcaUoh7jwNi5HpFX6De 
-
 1LcubHwTs7AuHGxoPdwttbcbJkrrCwWUYX 
-
 1zmkxjXmisf4kvQJCUnhKRYMbpsXBdPYf 
-
 1EaKYX3U3GGjM4NoNXNVhMk7KQ1UKnTXgz 
-
 1Pz7MTSoESDmnQDMaeLijG4qCbsPdvrus6 
-
-### 启动链并连
-
-接对端节点
-./cmd -c chain -s lzhx_ -l 8080 -a 1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY
-
--s 表示 钱包后缀
-
--a 表示钱包地址
+```
 
 
-启动当前节点后日志输出一下信息
-
+### 启动链并连接对端节点
+```shell script
+$ ./cmd -c chain -s lzhx_ -l 8080 -a 1KSKahQT9n69sgqn4aVmRUPpydf6AUeeZY
 local http server listening on 127.0.0.1:8081
 2018/09/21 15:06:20 I am /ip4/127.0.0.1/tcp/8080/ipfs/QmdhJPDZaLPCFjZMsuLfVtzZMNaZMPp6wT85gYdRnVcppj
 2018/09/21 15:06:20 Now run "go run main.go -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmdhJPDZaLPCFjZMsuLfVtzZMNaZMPp6wT85gYdRnVcppj" on a different terminal
+```
+其中，-s 钱包后缀，-a 钱包地址
 
 在另一个terminal中启动对端节点（加入-s参数表示该节点的钱包后缀名）
-
+```shell script
 ./cmd -s lzhx_ -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmdhJPDZaLPCFjZMsuLfVtzZMNaZMPp6wT85gYdRnVcppj -a 1EFnWYm1suorEdt5XLEJ9UMTYQjGzqmiJq -s zhong_
+```
 
 两节点正常连接后可在terminal中输入任意数字，该操作将产生新的块并同步块信息到对端节点
 
